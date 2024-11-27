@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'SBL Hebrew';
-    src: local('SBL Hebrew'), 
+    font-family: 'SBL BibLit';
+    src: local('SBL BibLit'), 
          url('SBL_Hbrw.ttf') format('truetype');
     /* If the font supports other formats, you can add them like this: 
     src: local('SBL Hebrew'), 
@@ -12,7 +12,7 @@
 }
 
 body, html {
-    font-family: 'SBL Hebrew', 'Arial', sans-serif; /* Add a fallback font */
+    font-family: 'SBL BibLit', 'Arial', sans-serif; /* Add a fallback font */
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -24,7 +24,6 @@ body, html {
 /* Rest of the CSS remains the same */
 
 .container {
-    width: 80%;
     margin: auto; /* Center the container horizontally */
     display: flex;
     flex-direction: column;
@@ -39,7 +38,8 @@ body, html {
     padding: 15px; 
     margin: 10px 0;
     border-radius: 10px;
-    width: 100%; 
+    width: 70vw; /* Set the width to 70% of the viewport width */
+    max-width: 100%; /* Ensure it doesn't exceed the container's width on smaller screens */
     height: auto; 
     background-color: #e6e6e6;
     text-align: center; 
