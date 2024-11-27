@@ -30,7 +30,7 @@ body, html {
     flex-grow: 1; /* Allow the container to grow and fill available space */
     justify-content: center; /* Center content vertically within container */
     flex-shrink: 0; /* Prevent shrinking */
-    margin-top: 40px; /* Add top margin here */
+    margin-top: 100px; /* Add top margin here */
 }
 
 .textbox {
