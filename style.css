@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'SBL Hebrew';
+    src: local('SBL Hebrew'), 
+         url('SBL_Hbrw.ttf') format('truetype');
+    /* If the font supports other formats, you can add them like this: 
+    src: local('SBL Hebrew'), 
+         url('SBL_Hbrw.eot?') format('embedded-opentype'), 
+         url('SBL_Hbrw.woff2') format('woff2'), 
+         url('SBL_Hbrw.woff') format('woff'), 
+         url('SBL_Hbrw.ttf') format('truetype'); 
+    */
+}
+
+body, html {
+    font-family: 'SBL Hebrew', 'Arial', sans-serif; /* Add a fallback font */
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #001111;
+}
+
+/* Rest of the CSS remains the same */
+
+.container {
+    width: 80%;
+    margin: auto; /* Center the container horizontally */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow the container to grow and fill available space */
+    justify-content: center; /* Center content vertically within container */
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-top: 40px; /* Add top margin here */
+}
+
+.textbox {
+    border: 1px solid #ccc;
+    padding: 15px; 
+    margin: 10px 0;
+    border-radius: 10px;
+    width: 100%; 
+    height: auto; 
+    background-color: #e6e6e6;
+    text-align: center; 
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    display: block;
+}
+
+#hebrew {
+    font-size: 60px;
+    direction: rtl;
+}
+
+#hebrew span {
+    unicode-bidi: bidi-override;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-left: 0;
+}
+
+#translit, #english {
+    font-size: 30px;
+}
+
+.buttons-container {
+    margin-top: auto; /* Push buttons to the bottom */
+    margin-bottom: 20px; /* Add some bottom margin */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
