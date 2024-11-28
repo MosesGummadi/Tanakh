@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hebrew Text Display</title>
     <link rel="stylesheet" href="style.css">
+    <title>CSV Reader</title>
 </head>
 <body>
     <div class="container">
-        <div id="hebrew" class="textbox" dir="rtl"></div>
-        <div id="translit" class="textbox"></div>
-        <div id="english" class="textbox"></div>
+        <div class="first-group">
+            <div class="textbox" id="parasha"></div>
+            <div class="textbox" id="reference"></div>
+        </div>
+
+        <div class="second-group">
+            <div class="textbox" id="hebrew"></div>
+            <div class="textbox" id="translit"></div>
+            <div class="textbox" id="english"></div>
+        </div>
+
         <div class="buttons-container">
             <button onclick="prevRow()">Previous</button>
             <button onclick="nextRow()">Next</button>
