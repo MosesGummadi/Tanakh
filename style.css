@@ -2,13 +2,6 @@
     font-family: 'SBL BibLit';
     src: local('SBL BibLit'), 
          url('SBL_Hbrw.ttf') format('truetype');
-    /* If the font supports other formats, you can add them like this: 
-    src: local('SBL Hebrew'), 
-         url('SBL_Hbrw.eot?') format('embedded-opentype'), 
-         url('SBL_Hbrw.woff2') format('woff2'), 
-         url('SBL_Hbrw.woff') format('woff'), 
-         url('SBL_Hbrw.ttf') format('truetype'); 
-    */
 }
 
 body, html {
@@ -21,55 +14,100 @@ body, html {
     background-color: #001111;
 }
 
-/* Rest of the CSS remains the same */
-
 .container {
-    margin: auto; /* Center the container horizontally */
+    width: 70%;
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Allow the container to grow and fill available space */
-    justify-content: center; /* Center content vertically within container */
-    flex-shrink: 0; /* Prevent shrinking */
-    margin-top: 40px; /* Add top margin here */
+    gap: 20px;
+}
+
+.first-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%; /* This ensures the full width is used for distribution */
+}
+
+.second-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased by 10px from the original 10px */
 }
 
 .textbox {
-    border: 1px solid #ccc;
-    padding: 15px; 
-    margin: 10px 0;
+    padding: 15px;
     border-radius: 10px;
-    width: 70vw; /* Set the width to 70% of the viewport width */
-    max-width: 100%; /* Ensure it doesn't exceed the container's width on smaller screens */
-    /* height: auto; */
     background-color: #e6e6e6;
-    text-align: center; 
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     word-wrap: break-word;
     white-space: pre-wrap;
-    overflow-y: auto;
-    display: block;
+    overflow-wrap: break-word;
+    width: 100%;  /* Added to ensure all textboxes are the full width of their container */
+    box-sizing: border-box; /* Include padding in the width calculation */
 }
 
+/* Styles for Parasha */
+#parasha {
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+    text-align: left;
+    flex: 1; /* This allows #parasha to grow and take available space */
+}
+
+#reference {
+    background-color: transparent;
+    color: white;
+    font-size: 30px;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    flex: 1; /* This ensures #reference also grows */
+    min-width: 0; /* Allows flex items to shrink if content overflows */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Styles for Hebrew */
 #hebrew {
     font-size: 60px;
-    height: 30vh;
     direction: rtl;
+    height: 30vh;
+    overflow: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    width: 100%; /* This should be consistent with other textboxes */
+    max-width: 100%; /* Prevents overflow */
 }
 
-#hebrew span {
-    unicode-bidi: bidi-override;
-    display: inline-block;
-    margin-right: 0.5em;
-    margin-left: 0;
+#hebrew > div {
+    width: 100%;
+    text-align: center;
 }
 
+
+/* Styles for Transliteration and English */
 #translit, #english {
     font-size: 30px;
     height: 18vh;
 }
 
 .buttons-container {
-    margin-top: auto; /* Push buttons to the bottom */
-    margin-bottom: 20px; /* Add some bottom margin */
+    margin-top: 20px; /* This will push the container to the bottom of .container */
+    margin-bottom: 20px; /* Adds a 20px margin at the bottom */
     display: flex;
     justify-content: center;
     gap: 20px;
