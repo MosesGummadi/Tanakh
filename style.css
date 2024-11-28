@@ -40,7 +40,7 @@ body, html {
     border-radius: 10px;
     width: 70vw; /* Set the width to 70% of the viewport width */
     max-width: 100%; /* Ensure it doesn't exceed the container's width on smaller screens */
-    height: auto; 
+    /* height: auto; */
     background-color: #e6e6e6;
     text-align: center; 
     word-wrap: break-word;
@@ -51,6 +51,7 @@ body, html {
 
 #hebrew {
     font-size: 60px;
+    height: 30vh;
     direction: rtl;
 }
 
@@ -63,6 +64,7 @@ body, html {
 
 #translit, #english {
     font-size: 30px;
+    height: 18vh;
 }
 
 .buttons-container {
