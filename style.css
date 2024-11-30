@@ -25,7 +25,7 @@ body, html {
 .first-group {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    /* gap: 10px; */
     width: 100%; /* This ensures the full width is used for distribution */
 }
 
