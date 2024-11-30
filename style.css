@@ -5,7 +5,7 @@
 }
 
 body, html {
-    font-family: 'SBL BibLit', 'Arial', sans-serif; /* Add a fallback font */
+    font-family: 'SBL BibLit', 'Arial', sans-serif;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -24,17 +24,35 @@ body, html {
 
 .first-group {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    /* gap: 10px; */
-    width: 100%; /* This ensures the full width is used for distribution */
+    align-items: center;
+    height: 6vh;
+    width: 100%;
 }
 
 .second-group {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Increased by 10px from the original 10px */
+    gap: 20px;
 }
 
+/* Separate styles for #parasha and #reference */
+#parasha, #reference {
+    font-size: 30px;
+    color: white;
+    background-color: transparent;
+}
+
+#parasha {
+    text-align: left;
+}
+
+#reference {
+    text-align: right;
+}
+
+/* "textbox" class styling for second-group elements */
 .textbox {
     padding: 15px;
     border-radius: 10px;
@@ -47,32 +65,8 @@ body, html {
     word-wrap: break-word;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    width: 100%;  /* Added to ensure all textboxes are the full width of their container */
-    box-sizing: border-box; /* Include padding in the width calculation */
-}
-
-/* Styles for Parasha */
-#parasha {
-    background-color: transparent;
-    color: white;
-    font-size: 30px;
-    text-align: left;
-    align-items: end;
-    flex: 1; /* This allows #parasha to grow and take available space */
-}
-
-#reference {
-    background-color: transparent;
-    color: white;
-    font-size: 30px;
-    height: 6vh;
-    display: flex;
-    align-items: end;
-    text-align: right;
-    flex: 1; /* This ensures #reference also grows */
-    min-width: 0; /* Allows flex items to shrink if content overflows */
-    white-space: nowrap;
-    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Styles for Hebrew */
@@ -81,24 +75,7 @@ body, html {
     direction: rtl;
     height: 30vh;
     overflow: auto;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    word-wrap: break-word;
-    white-space: pre-wrap;
-    word-break: break-word;
-    width: 100%; /* This should be consistent with other textboxes */
-    max-width: 100%; /* Prevents overflow */
 }
-
-#hebrew > div {
-    width: 100%;
-    text-align: center;
-}
-
 
 /* Styles for Transliteration and English */
 #translit, #english {
@@ -106,9 +83,10 @@ body, html {
     height: 18vh;
 }
 
+/* Buttons Container */
 .buttons-container {
-    margin-top: 20px; /* This will push the container to the bottom of .container */
-    margin-bottom: 20px; /* Adds a 20px margin at the bottom */
+    margin-top: 20px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
