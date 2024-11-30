@@ -57,6 +57,7 @@ body, html {
     color: white;
     font-size: 30px;
     text-align: left;
+    align-items: end;
     flex: 1; /* This allows #parasha to grow and take available space */
 }
 
@@ -66,7 +67,7 @@ body, html {
     font-size: 30px;
     height: 6vh;
     display: flex;
-    align-items: center;
+    align-items: end;
     text-align: right;
     flex: 1; /* This ensures #reference also grows */
     min-width: 0; /* Allows flex items to shrink if content overflows */
