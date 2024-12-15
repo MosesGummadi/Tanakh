@@ -1,3 +1,4 @@
+/* Works best on Chrome - localhost:8080 */
 @font-face {
     font-family: 'SBL BibLit';
     src: local('SBL BibLit'), 
@@ -15,7 +16,7 @@ body, html {
 }
 
 .container {
-    width: 70%;
+    width: 60%;
     margin: 20px auto;
     display: flex;
     flex-direction: column;
@@ -38,13 +39,18 @@ body, html {
 }
 
 /* Separate styles for #parasha and #reference */
-#parasha, #reference {
+#parasha, #weekday, #reference {
     font-size: 30px;
     color: white;
     background-color: transparent;
+    flex-shrink: 0; /* Prevent shrinking */
 }
 
 #parasha {
+    text-align: left;
+}
+
+#weekday {
     text-align: left;
 }
 
@@ -74,7 +80,7 @@ body, html {
     font-size: 60px;
     direction: rtl;
     height: 30vh;
-    overflow: auto;
+    overflow: hidden;
 }
 
 /* Styles for Transliteration and English */
@@ -83,7 +89,6 @@ body, html {
     height: 18vh;
 }
 
-/* Buttons Container */
 .buttons-container {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -100,6 +105,8 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    width: 120px; /* Set a fixed width */
+    text-align: center; /* Ensure text is centered */
 }
 
 button:hover {

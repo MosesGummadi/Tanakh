@@ -24,16 +24,17 @@ function parseCSV(content) {
     rows.shift(); // Skip the first row (header)
 
     data = rows.map(row => {
-        if (row.length > 5) {
-            row[4] = row.slice(4).join(","); // Join back the parts after the 5th column
-            row = row.slice(0, 5); // Keep only the first 5 columns
+        if (row.length > 6) {
+            row[5] = row.slice(5).join(","); // Join back the parts after the 6th column
+            row = row.slice(0, 6); // Keep only the first 6 columns
         }
         return {
             Parasha: row[0]?.trim(),
-            Reference: row[1]?.trim(),
-            Hebrew: row[2]?.trim(),
-            Translit: row[3]?.trim(),
-            English: row[4]?.trim()
+            Day: row[1]?.trim(),
+            Reference: row[2]?.trim(),
+            Hebrew: row[3]?.trim(),
+            Translit: row[4]?.trim(),
+            English: row[5]?.trim()
         };
     });
 
@@ -61,10 +62,13 @@ function updateDisplay() {
     if (data.length === 0) return; // No data to display
     const row = data[currentRow];
     document.getElementById("parasha").textContent = row.Parasha || "";
+    document.getElementById("weekday").textContent = row.Day || "";
     document.getElementById("reference").textContent = row.Reference || "";
     document.getElementById("hebrew").innerHTML = addWordHighlighting(row.Hebrew);
     document.getElementById("translit").textContent = row.Translit || "";
     document.getElementById("english").textContent = row.English || "";
+    
+    adjustFontSize(); // Add this line to adjust font size after updating content
 
     setupWordHighlighting();
 }
@@ -104,4 +108,36 @@ function nextRow() {
 }
 
 // Load the CSV data when the page loads
-document.addEventListener("DOMContentLoaded", loadCSV);
+//document.addEventListener("DOMContentLoaded", loadCSV);
+
+document.addEventListener("DOMContentLoaded", function () {
+    loadCSV(); // Your existing function to load the CSV
+
+    // Add arrow key navigation
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") {
+            prevRow(); // Trigger the "Previous" row function
+        } else if (event.key === "ArrowRight") {
+            nextRow(); // Trigger the "Next" row function
+        }
+    });
+    
+    // Add resize event listener for font size adjustment
+    window.addEventListener('resize', adjustFontSize);
+    
+});
+
+// Function to adjust Hebrew font size if needed
+
+function adjustFontSize() {
+    const textbox = document.getElementById('hebrew');
+    const maxFontSize = 60;
+    let fontSize = maxFontSize;
+
+    textbox.style.fontSize = `${fontSize}px`;
+
+    while (textbox.scrollHeight > textbox.clientHeight && fontSize > 1) {
+        fontSize--;
+        textbox.style.fontSize = `${fontSize}px`;
+    }
+}
