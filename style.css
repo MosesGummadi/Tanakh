@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'SBL BibLit';
     src: local('SBL BibLit'), 
-         url('SBL_Hbrw.ttf') format('truetype');
+         url('SBL_BLit.ttf') format('truetype');
 }
 
 body, html {
