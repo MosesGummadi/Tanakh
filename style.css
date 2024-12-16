@@ -1,12 +1,14 @@
 /* Works best on Chrome - localhost:8080 */
+
 @font-face {
     font-family: 'SBL BibLit';
-    src: local('SBL BibLit'), 
-         url('SBL_BLit.ttf') format('truetype');
+    src: url('SBL_BLit.ttf') format('truetype');
+    font-display: swap;
 }
 
 body, html {
-    font-family: 'SBL BibLit', 'Arial', sans-serif;
+    font-family: 'SBL BibLit', 'Gentium Plus', 'Charis SIL', 'Arial Unicode MS', 'Arial', sans-serif;
+    /* Gentium Plus and Charis SIL are good for extended Latin characters */
     height: 100vh;
     margin: 0;
     padding: 0;
