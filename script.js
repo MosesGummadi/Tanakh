@@ -34,7 +34,8 @@ function parseCSV(content) {
             Reference: row[2]?.trim(),
             Hebrew: row[3]?.trim(),
             Translit: row[4]?.trim(),
-            English: row[5]?.trim()
+            // Remove quotes from English text if present
+            English: row[5]?.trim().replace(/^"|"$/g, '')
         };
     });
 
